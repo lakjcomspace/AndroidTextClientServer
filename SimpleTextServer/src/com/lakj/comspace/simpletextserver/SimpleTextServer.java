@@ -6,6 +6,11 @@ import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+/**
+ * This is a simple server application. This server receive a string message
+ * from the Android mobile phone and show it on the console.
+ * Author by Lak J Comspace
+ */
 public class SimpleTextServer {
 
 	private static ServerSocket serverSocket;
@@ -27,13 +32,9 @@ public class SimpleTextServer {
 		while (true) {
 			try {
 
-				clientSocket = serverSocket.accept(); // accept the client
-														// connection
+				clientSocket = serverSocket.accept(); // accept the client connection
 				inputStreamReader = new InputStreamReader(clientSocket.getInputStream());
-				bufferedReader = new BufferedReader(inputStreamReader); // get
-																		// the
-																		// client
-																		// message
+				bufferedReader = new BufferedReader(inputStreamReader); // get the client message
 				message = bufferedReader.readLine();
 
 				System.out.println(message);
